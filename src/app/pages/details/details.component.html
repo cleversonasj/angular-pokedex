@@ -1,0 +1,28 @@
+<main class="container">
+  <section class="pokeInfo">
+    <h1>{{ pokemon[0].name }}</h1>
+    <h2>{{ pokemon[1].name[0].name }}</h2>
+  </section>
+
+  <section>
+    <img
+      [src]="pokemon[0].sprites.other.home.front_default"
+      [alt]="pokemon[0].name"
+    />
+
+    <article class="pokemon__status__statistics">
+      <section>
+        <h3>Estatísticas</h3>
+        <ol>
+          <li *ngFor="let value of pokemon[0].stats">
+            {{ value.stat.name }}
+            <strong>
+              {{ value.base_stat }}
+            </strong>
+          </li>
+        </ol>
+      </section>
+      <a [routerLink]="['']" class="btn btn__secondary"> Voltar </a>
+    </article>
+  </section>
+</main>
